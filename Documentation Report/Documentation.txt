@@ -1,0 +1,178 @@
+Hoisting :
+Hoisting refers to the process  to move the declarations to the top of the code before execution.
+Variables can be refered before they are declared in JS 
+greet()
+function greet(){
+console.log("good morning")
+}
+// good morning -output
+Important Note:
+JS only hoists declarations not initializatios .The variable will be undefined until the line where its is initized is reached.
+console.log(a) 
+greet()
+function greet(){
+console.log("good morning")
+} 
+var a=9;
+console.log(a)
+// undefined-output
+//good morning -output 
+//9-output 
+
+Hoisting reacts different with var and let and const 
+greet()
+console.log(a)
+function greet(){
+console.log("good morning")
+}
+let a=9;
+const a=9 ;
+console.log(a)
+// error occurs- cannot access a before initilization 
+// Beacuse a is declared at the top but initialization is not it goes in temporary dead zone 
+
+Function expressions and class expressions are not hoisted  
+greet()
+console.log(a)
+let greet=function(){
+console.log("good morning")
+}
+let a=9;
+const a=9 ;
+console.log(a) 
+//Function variables are not hoisted in javascript neither for var , let , const -output 
+
+ECMA SCRIPT:
+ECMA script is the updated version of JS.
+It was built bt ECMA international so it is named as ECMA script.
+ECMA script gave the standard that every browser will follow the same standard named ECMA-262.
+ECMA script is the subset of JS.
+Differnt versions of ECMA Script are as follow: 
+ECMA Script 3(1999)
+
+ECMA Script 5(2009)
+
+ECMA Script 6(2015):
+ES6 includes the following new features:
+1.arrows
+2.classes
+3.enhanced object literals
+4.template strings
+5.destructuring
+6.let + const : let and const are not hoisted in the global scope. var can be hoisted in global scope  
+7.iterators + for..of
+8.Promises
+9.Module Loaders
+
+
+ECMA Script 7(2016)
+ECMAScript 2016(ES7) introduced only two new features:
+1.Array.prototype.includes()
+2.Exponentiation operator 
+
+ECMA Script 8(2017) 
+1.Async Functions
+
+ECMA Script 9(2018) 
+1.Asynchronous Iteration 
+2.Promise.prototype.finally :
+As we know, promises make the execution of the callback function much easier.
+ Numerous promise libraries have a method called “finally” by which we can run the code and it won’t matter how the Promise gives a resolution.
+ When a promise gets fulfilled or denied, it registers a callback that gets invoked and that callback can be called in the finally block. E.g.
+let myPromise = new Promise();
+myPromise.then();
+myPromise.catch();
+myPromise.finally();
+3.Object Rest Properties:
+let { a, b, ...c } = { a: 1, b: 2, c: “Hello World”, d: 4 };
+console.log(a); // 1
+console.log(b); // 2
+console.log(c); // { c: “Hello World”, d: 4 }
+
+ECMA Script 10(2019)
+1.Array.flat() 
+2.Array.flatmap()
+3.String.trimStart/trimEnd
+
+ECMA Script 11(2020) 
+1.import()
+2.globalThis
+3.Nullish Coalescing Operator (??)
+4.Optional Chaining Operator (?.) 
+
+ECMA Script 12(2021)
+1.replaceAll
+2.Numeric separator
+3.Private Methods
+4.Promise.any()
+
+Conclusion:
+Each year Ecmascript releases some features that help to improve the quality and we must be familiar with the latest features to be able to use all the latest features. From its establishment in 1995 to the present day, there have been major changes that have helped ECMAScript gain its present popularity among developers.
+ JavaScript and JScript are both made to be compatible with ECMA and it’s still been updated through numerous proposals of development.
+ 
+ES6 Modules:
+ES6 (ECMAScript 2015) introduced a new way to organize and share code called modules. ES6 modules allow developers to write modular and reusable code by exporting and importing variables, functions, classes, and other features from one module to another.
+Here's an example of how to create a module using ES6 syntax:
+
+javascript
+Copy code
+// math.js
+export function add(a, b) {
+  return a + b;
+}
+
+export function subtract(a, b) {
+  return a - b;
+}
+
+export const pi = 3.14159265359;
+In the above code, we have defined two functions add and subtract, and a constant pi, and then we have exported them using the export keyword.
+
+We can then import these functions and constant in another module like this:
+
+javascript
+Copy code
+// main.js
+import { add, subtract, pi } from './math.js';
+
+console.log(add(2, 3)); // Output: 5
+console.log(subtract(5, 2)); // Output: 3
+console.log(pi); // Output: 3.14159265359
+In the above code, we have imported the add, subtract, and pi functions from the math.js module using the import keyword.
+
+ES6 modules support both named and default exports. Named exports allow us to export multiple variables, functions, or constants from a module, whereas default exports allow us to export a single value as the default export. Here's an example:
+
+javascript
+Copy code
+// logger.js
+export function log(message) {
+  console.log(message);
+}
+
+export default {
+  name: 'ChatGPT',
+  version: '1.0.0',
+};
+In the above code, we have exported a function log as a named export, and an object containing name and version properties as the default export.
+
+We can then import the named and default exports in another module like this:
+
+javascript
+Copy code
+// main.js
+import { log } from './logger.js';
+import myModule from './logger.js';
+
+log('Hello, World!'); // Output: Hello, World!
+console.log(myModule.name); // Output: ChatGPT
+console.log(myModule.version); // Output: 1.0.0
+In the above code, we have imported the log function as a named export and the myModule object as the default export from the logger.js module using the import keyword
+ 
+ 
+
+
+
+
+
+
+ 
